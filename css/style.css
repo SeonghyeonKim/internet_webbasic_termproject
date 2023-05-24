@@ -180,5 +180,9 @@
         color: #FFFFFF;
         background-color: #777777
     }
+
+    .mark {
+        width: 15px;
+    }
 }
 
