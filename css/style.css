@@ -1,0 +1,184 @@
+@media (min-width: 800px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+
+        border: 1px solid black;
+    }
+
+    .title {
+        font-size: 3em;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    #start {
+        font-size: 1.5em;
+        margin: 10px;
+    }
+
+    #handle {
+        margin: 20px;  
+    }
+
+    #enter_button {
+        padding: 10px;
+    }
+
+    .challenge_container {
+        display: flex;
+    }
+
+    .sub_title {
+        font-size: 2em;
+        margin-bottom: 10px;  
+    }
+
+    .left_container {
+        position: fixed;
+        width: 160px;
+        left: 30px;
+        border-right: 1px solid black;
+        padding-right: 30px;
+        height: 100%;
+
+        background-color: white;
+    }
+
+    .mid_container {
+        overflow-x: hidden;
+        overflow-y: auto;
+        
+        display: flex;
+        flex-wrap: wrap;
+
+        margin-left: 250px;    
+    }
+
+    .right_container {
+        position: fixed;
+        height: 100%;
+        border-left: 1px solid black;
+        padding-left: 30px;
+        right: 30px;
+        width: 160px;
+
+        background-color: white;
+    }
+
+
+    .challenge {
+        cursor: pointer;
+        font-size: 1.5em;
+        width: 350px;
+
+        padding: 20px;
+        margin: 20px;
+        border: 1px solid black;
+
+        transition:
+            transform .1s,
+            background-color .6s;
+    }
+
+    .challenge:hover {
+        overflow: visible;
+        transform: scale(1.1);
+        z-index: 1;
+    }
+
+    .info {
+        font-size: 0.5em;
+        color: gray;
+    }
+
+    #bronze {
+        color: #DB6C00;
+    }
+
+    #silver {
+        color: #54789A;
+    }
+
+    #gold {
+        color: #FFC300;
+    }
+
+    #platinum {
+        color: #2CFFBC;
+    }
+
+    #diamond {
+        color: #00E4FF;      
+    }
+
+    #ruby {
+        color: #FF0068;      
+    }
+
+    #tier {
+        color: #BA90FA;
+    }
+
+    #class {
+        color: #96CC00;
+    }
+
+    #unrated {
+        color: #777777
+    }
+
+    #bronze:hover {
+        color: #FFFFFF;
+        background-color: #DB6C00;
+    }
+
+    #silver:hover {
+        color: #FFFFFF;
+        background-color: #54789A;
+    }
+
+    #gold:hover {
+        color: #FFFFFF;
+        background-color: #FFC300;
+    }
+
+    #platinum:hover {
+        color: #FFFFFF;
+        background-color: #2CFFBC;
+    }
+
+    #diamond:hover {
+        color: #FFFFFF;
+        background-color: #00E4FF;      
+    }
+
+    #ruby:hover {
+        color: #FFFFFF;
+        background-color: #FF0068;      
+    }
+
+    #tier:hover {
+        color: #FFFFFF;
+        background-color: #BA90FA;
+    }
+
+    #class:hover {
+        color: #FFFFFF;
+        background-color: #96CC00;
+    }
+
+    #unrated:hover {
+        color: #FFFFFF;
+        background-color: #777777
+    }
+}
+
