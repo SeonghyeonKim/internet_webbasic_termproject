@@ -129,9 +129,17 @@ document.getElementById("start_button").onclick = function () {
 
 
 document.getElementById("end_button").onclick = function () {
-    let dis = new Date().getTime() - timeStart;
+    try {
+        if(!timeFlag) throw new Error('Start 버튼을 먼저 누르세요!');
     
-    alert(`${Math.floor(dis/360000)%60}시 ${Math.floor(dis/60000)%60}분 ${Math.floor(dis/1000)%60}초 지났습니다.`);
+        let dis = new Date().getTime() - timeStart;
+
+        alert(`${Math.floor(dis/360000)%60}시 ${Math.floor(dis/60000)%60}분 ${Math.floor(dis/1000)%60}초 지났습니다.`);
+        timeFlag = 0;
+    }
+    catch (e){
+        alert(e);
+    }
 };
 
 
