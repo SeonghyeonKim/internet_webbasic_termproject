@@ -72,34 +72,39 @@ const all_difficulty = ['*b', '*s', '*g', '*p', '*d', '*r', '*ur'];
 
 async function randomProblemChallenge(difficulty) {
     // 난이도 별
-    if(difficulty <= 6) {
-        let problem_url = base_url + all_difficulty[difficulty] + `!@${handle}&sort=random`;
-
-        const response = await fetch(problem_url, problem_options);
-        const data = await response.json();
-
-        if(data.count==0) alert("해결할 수 있는 문제가 없습니다."); 
-        else window.open(`${boj_url}${data.items[0].problemId}`);
+    try{
+        if(difficulty <= 6) {
+            let problem_url = base_url + all_difficulty[difficulty] + `!@${handle}&sort=random`;
+        
+            const response = await fetch(problem_url, problem_options);
+            const data = await response.json();
+    
+            if(data.count==0) throw new Error(); 
+            else window.open(`${boj_url}${data.items[0].problemId}`);
+        }
+        // 현재 티어
+        else if(difficulty==7) {
+            let problem_url = base_url + all_difficulty[user_tier] + `!@${handle}&sort=random`;
+    
+            const response = await fetch(problem_url, problem_options);
+            const data = await response.json();
+    
+            if(data.count==0) throw new Error(); 
+            else window.open(`${boj_url}${data.items[0].problemId}`);
+        }
+        // 현재 클래스
+        else {
+            let problem_url = base_url + `c/${user_class}` + `!@${handle}&sort=random`;
+    
+            const response = await fetch(problem_url, problem_options);
+            const data = await response.json();
+    
+            if(data.count==0) throw new Error(); 
+            else window.open(`${boj_url}${data.items[0].problemId}`);
+        }
     }
-    // 현재 티어
-    else if(difficulty==7) {
-        let problem_url = base_url + all_difficulty[user_tier] + `!@${handle}&sort=random`;
-
-        const response = await fetch(problem_url, problem_options);
-        const data = await response.json();
-
-        if(data.count==0) alert("해결할 수 있는 문제가 없습니다."); 
-        else window.open(`${boj_url}${data.items[0].problemId}`);
-    }
-    // 현재 클래스
-    else {
-        let problem_url = base_url + `c/${user_class}` + `!@${handle}&sort=random`;
-
-        const response = await fetch(problem_url, problem_options);
-        const data = await response.json();
-
-        if(data.count==0) alert("해결할 수 있는 문제가 없습니다."); 
-        else window.open(`${boj_url}${data.items[0].problemId}`);
+    catch(e) {
+        alert("해결 할 수 있는 문제가 없습니다.");
     }
 }
 
