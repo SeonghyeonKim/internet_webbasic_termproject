@@ -119,5 +119,22 @@ Kakao.Share.createDefaultButton({
 });
 
 
+let timeFlag = 0;
+let timeStart = 0;
+
+document.getElementById("start_button").onclick = function () {
+    timeFlag = 1;
+    timeStart = new Date().getTime();
+};
+
+
+document.getElementById("end_button").onclick = function () {
+    let dis = new Date().getTime() - timeStart;
+    
+    alert(`${Math.floor(dis/360000)%60}시 ${Math.floor(dis/60000)%60}분 ${Math.floor(dis/1000)%60}초 지났습니다.`);
+};
+
+
+
 loadSolvedacUserData();
 
