@@ -107,27 +107,30 @@ async function randomProblemChallenge(difficulty) {
 let shareProblemNumber = document.getElementById("share_number").innerText;
 Kakao.init('ef39bc4ea6c955f7bd3fc1e011c2cc51'); 
 
+// 카카오톡 공유하기
 Kakao.Share.createDefaultButton({
     container: '#kakaotalk-sharing-btn',
     objectType: 'text',
     text:
-      '테스트',
+      `${shareProblemNumber}번 문제를 풀어봐요!`,
     link: {
-        mobileWebUrl: 'https://www.acmicpc.net/problem/1000',
-        webUrl: 'https://www.acmicpc.net/problem/1000'
+        mobileWebUrl: `https://www.acmicpc.net/problem/${shareProblemNumber}`,
+        webUrl: `https://www.acmicpc.net/problem/${shareProblemNumber}`
     },
 });
 
 
+// 타이머 기능
 let timeFlag = 0;
 let timeStart = 0;
 
+// 타이머 시작
 document.getElementById("start_button").onclick = function () {
     timeFlag = 1;
     timeStart = new Date().getTime();
 };
 
-
+// 타이머 종료 및 시간 알림
 document.getElementById("end_button").onclick = function () {
     try {
         if(!timeFlag) throw new Error('Start 버튼을 먼저 누르세요!');
@@ -141,7 +144,6 @@ document.getElementById("end_button").onclick = function () {
         alert(e);
     }
 };
-
 
 
 loadSolvedacUserData();
