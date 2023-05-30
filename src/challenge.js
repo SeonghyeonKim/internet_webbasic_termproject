@@ -104,17 +104,20 @@ async function randomProblemChallenge(difficulty) {
 }
 
 // 카카오 SDK
+let shareProblemNumber = document.getElementById("share_number").innerText;
 Kakao.init('ef39bc4ea6c955f7bd3fc1e011c2cc51'); 
 
-function sendLink() { // 카카오톡 공유하기
-    Kakao.Link.sendDefault({
-        objectType: 'text',
-        text: '',
-        link: {
-            webUrl: 'https://developers.kakao.com/docs/js/kakaotalklink#텍스트-템플릿-보내기',
-        },
-    })
-}
+Kakao.Share.createDefaultButton({
+    container: '#kakaotalk-sharing-btn',
+    objectType: 'text',
+    text:
+      '테스트',
+    link: {
+        mobileWebUrl: 'https://www.acmicpc.net/problem/1000',
+        webUrl: 'https://www.acmicpc.net/problem/1000'
+    },
+});
+
 
 loadSolvedacUserData();
 
