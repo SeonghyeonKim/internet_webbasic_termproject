@@ -157,5 +157,87 @@ document.getElementById("end_button").onclick = function () {
 };
 
 
-loadSolvedacUserData();
+// ToDo List 기능
+const todoText = document.getElementById("todo_text");
+const todoList = document.getElementById("todo_list");
+const addTodoButton = document.getElementById("addToDo_button");
 
+const TODO_LIST = "TODO_LIST";
+let todoArray = [];
+
+// local storage에 현재 상태 저장
+function saveTodoArray() {
+    localStorage.setItem(TODO_LIST, JSON.stringify(todoArray));
+}
+
+// local storage의 배열 불러오기
+function loadTodoArray() {
+    const storageArray = localStorage.getItem(TODO_LIST);
+
+    if(storageArray!=null) {
+        const parseStorageArray = JSON.parse(storageArray);
+
+        parseStorageArray.forEach(function (todo) {
+            addTodo(todo.text);
+        });
+    }
+}
+
+// todo 추가하기
+function addTodo(text) {
+    const li = document.createElement("li");     
+    const removeButton = document.createElement("button");
+    const newId = todoArray.length + 1; 
+
+    removeButton.innerText = "삭제";
+    removeButton.addEventListener("click", removeTodo); 
+    
+    li.innerText = text;
+    li.appendChild(removeButton);
+    li.id = newId; 
+
+    todoList.appendChild(li);
+    const todoElement = {
+        text,
+        id: newId,
+    };
+
+    todoArray.push(todoElement); 
+    saveTodoArray(); 
+}
+
+// todo_array 에서 현재 상태 제거
+function removeTodo(event) {
+    const button = event.target;
+    const li = button.parentNode; 
+    
+    todoList.removeChild(li); 
+       
+    const temp = todoArray.filter(function (todo) { 
+        return todo.id != parseInt(li.id);
+    });
+
+    todoArray = temp; 
+    saveTodoArray(); 
+}
+
+// 일정 추가 버튼 활성화
+document.getElementById("addToDo_button").onclick = function() {
+    const text = document.getElementById("todo_text");
+    
+    if(!text.value)            
+        alert('내용을 입력해 주세요!');
+    else {
+        addTodo(text.value);
+        text.value = "";
+    }
+}
+
+
+// 초기화
+function init() {
+    loadSolvedacUserData();
+    loadTodoArray();
+}
+
+init();
