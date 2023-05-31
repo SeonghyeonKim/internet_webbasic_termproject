@@ -60,7 +60,7 @@ table {
 }
 
 #wrap_button {
-    position: absolute;
+    position: fixed;
     right: 20px;
     bottom: 30px;
 }
