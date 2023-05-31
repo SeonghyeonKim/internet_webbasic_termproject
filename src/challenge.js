@@ -134,20 +134,26 @@ window.onclick = function (event) {
 
 
 // 카카오 SDK
-let shareProblemNumber = document.getElementById("share_number").innerText;
 Kakao.init('ef39bc4ea6c955f7bd3fc1e011c2cc51'); 
+let shareProblemNumber = 1000;
+let shareButton = document.getElementById("kakaotalk-sharing-btn");
 
 // 카카오톡 공유하기
-Kakao.Share.createDefaultButton({
-    container: '#kakaotalk-sharing-btn',
-    objectType: 'text',
-    text:
-      `${shareProblemNumber}번 문제를 풀어봐요!`,
-    link: {
-        mobileWebUrl: `https://www.acmicpc.net/problem/${shareProblemNumber}`,
-        webUrl: `https://www.acmicpc.net/problem/${shareProblemNumber}`
-    },
-});
+shareButton.addEventListener('click', () => {
+    shareProblemNumber = document.getElementById("share_number").value;
+ 
+    Kakao.Share.sendDefault({
+        objectType: 'text',
+        text:
+            `${shareProblemNumber}번 문제를 풀어봐요!`,
+        link: {
+            mobileWebUrl: `https://www.acmicpc.net/problem/${shareProblemNumber}`,
+            webUrl: `https://www.acmicpc.net/problem/${shareProblemNumber}`
+        },
+    });
+})
+
+
 
 
 // 타이머 기능
