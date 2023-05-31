@@ -36,9 +36,9 @@ async function loadSolvedacUserData() {
     let tier = document.querySelector('#solvedTier');
     let maxstreak = document.querySelector('#solvedMaxStreak');
 
-    count.innerHTML = `총 푼 문제 수 : <b class="text-primary">${data.solvedCount}</b>`;
-    tier.innerHTML = `티어 : <b class="text-primary">${calculateTier}</b>`;
-    maxstreak.innerHTML = `최장 스트릭 : <b class="text-primary">${data.maxStreak}일</b>`;
+    count.innerHTML = `<b>${data.solvedCount}</b>`;
+    tier.innerHTML = `<b>${calculateTier}</b>`;
+    maxstreak.innerHTML = `<b>${data.maxStreak}일</b>`;
 }
 
 
