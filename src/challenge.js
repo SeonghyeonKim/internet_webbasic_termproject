@@ -137,6 +137,8 @@ let timeStart = 0;
 
 // 타이머 시작
 document.getElementById("start_button").onclick = function () {
+    document.getElementById("start_button").parentElement.style.color="red";
+    
     timeFlag = 1;
     timeStart = new Date().getTime();
 };
@@ -147,6 +149,8 @@ document.getElementById("end_button").onclick = function () {
         if(!timeFlag) throw new Error('Start 버튼을 먼저 누르세요!');
     
         let dis = new Date().getTime() - timeStart;
+
+        document.getElementById("start_button").parentElement.style.color="black";
 
         alert(`${Math.floor(dis/360000)%60}시 ${Math.floor(dis/60000)%60}분 ${Math.floor(dis/1000)%60}초 지났습니다.`);
         timeFlag = 0;

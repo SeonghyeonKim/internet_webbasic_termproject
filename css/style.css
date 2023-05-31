@@ -48,13 +48,22 @@ footer {
     text-align: center;
 }
 
+table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 ::placeholder {
     font-weight: bold;
     opacity: 0.5;
     color: red;
 }
 
-
+#kakaotalk-sharing-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+}
 
 @media (min-width: 900px) {
     body {
@@ -211,6 +220,19 @@ footer {
         background-color: #777777
     }
 
+    .timer_container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .timer_title {
+        font-size: 2em;
+    }
+
+    input#start_button {
+        margin: 10px;
+    }
+
     .mark {
         width: 15px;
     }
@@ -218,6 +240,8 @@ footer {
     li {
         display: block;
         text-indent: -40px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     ::marker {
