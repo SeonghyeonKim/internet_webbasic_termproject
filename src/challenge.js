@@ -6,6 +6,12 @@ let user_tier, user_class;
 // BOJ ID 출력
 document.querySelector('.name').innerHTML = `<b>${handle}</b> 님`
 
+// 로그아웃 및 이전 페이지 이동
+document.getElementById('log_out').addEventListener('click', () => {
+    localStorage.removeItem("handle", handle);
+    location.href='../index.html';
+})
+
 
 // Solved AC 데이터 가져오기
 async function getSolvedacUserData() {
