@@ -10,122 +10,119 @@
     <link rel="stylesheet" href="../css/style.css">
 </head> 
 <body>
-    <div class="desktop_container">
-        <div class="left_container">
-            <div class="sub_title">ALGO GO</div>
-            
-            <table class="data_container">
-                <tr>
-                    <td>아이디</td>
-                    <td class="name"></td>
-                </tr>
-                <tr>
-                    <td>푼 문제</td>
-                    <td id="totalSolvedCount"></td>
-                </tr>
-                <tr>
-                    <td>티어</td>
-                    <td id="solvedTier"></td>
-                </tr>
-                <tr>
-                    <td>스트릭</td>
-                    <td id="solvedMaxStreak"></td>
-                </tr>
-            </table>
+    <div class="left_container">
+        <div class="sub_title">ALGO GO</div>
+        
+        <table class="data_container">
+            <tr>
+                <td>아이디</td>
+                <td class="name"></td>
+            </tr>
+            <tr>
+                <td>푼 문제</td>
+                <td id="totalSolvedCount"></td>
+            </tr>
+            <tr>
+                <td>티어</td>
+                <td id="solvedTier"></td>
+            </tr>
+            <tr>
+                <td>스트릭</td>
+                <td id="solvedMaxStreak"></td>
+            </tr>
+        </table>
 
-            <input type="button" id="log_out" value="로그아웃">
-        </div>
+        <input type="button" id="log_out" value="로그아웃">
+    </div>
 
-        <div class="mid_container">
-            <div class="challenge" id="tier" value="0" onclick="randomProblemChallenge(7)">
-                Tier Random Challenge    
-                <div class="info">
-                    현재 티어에 맞는 문제 중에서 랜덤으로 출제
-                </div>
-            </div>
-            <div class="challenge" id="class" value="1" onclick="randomProblemChallenge(8)">
-                Class Random Challenge
-                <div class="info">
-                    현재 클래스에 맞는 문제 중에서 랜덤으로 출제
-                </div>
-            </div>
-            <div class="challenge" id="bronze" value="2" onclick="randomProblemChallenge(0)">
-                <img src="https://d2gd6pc034wcta.cloudfront.net/tier/1-a.svg" class="mark"/>
-                Bronze Random Challenge
-                <div class="info">
-                    브론즈 등급에 맞는 문제 중에서 랜덤으로 출제
-                </div>
-            </div>
-            <div class="challenge" id="silver" value="3" onclick="randomProblemChallenge(1)">
-                <img src="https://d2gd6pc034wcta.cloudfront.net/tier/6-a.svg" class="mark"/>
-                Silver Random Challenge
-                <div class="info">
-                    실버 등급에 맞는 문제 중에서 랜덤으로 출제
-                </div>
-            </div>
-            <div class="challenge" id="gold" value="4" onclick="randomProblemChallenge(2)">
-                <img src="https://d2gd6pc034wcta.cloudfront.net/tier/11-a.svg" class="mark"/>
-                Gold Random Challenge
-                <div class="info">
-                    골드 등급에 맞는 문제 중에서 랜덤으로 출제
-                </div>
-            </div>
-            <div class="challenge" id="platinum" value="5" onclick="randomProblemChallenge(3)">
-                <img src="https://d2gd6pc034wcta.cloudfront.net/tier/16-a.svg" class="mark"/>
-                Platinum Random Challenge
-                <div class="info">
-                    플레티넘 등급에 맞는 문제 중에서 랜덤으로 출제
-                </div>
-            </div>
-            <div class="challenge" id="diamond" value="6" onclick="randomProblemChallenge(4)">
-                <img src="https://d2gd6pc034wcta.cloudfront.net/tier/21-a.svg" class="mark"/>
-                Diamond Random Challenge
-                <div class="info">
-                    다이아몬드 등급에 맞는 문제 중에서 랜덤으로 출제
-                </div>
-            </div>
-            <div class="challenge" id="ruby" value="7" onclick="randomProblemChallenge(5)">
-                <img src="https://d2gd6pc034wcta.cloudfront.net/tier/26-a.svg" class="mark"/>
-                Ruby Random Challenge
-                <div class="info">
-                    루비 등급에 맞는 문제 중에서 랜덤으로 출제
-                </div>
-            </div>
-            <div class="challenge" id="unrated" value="8" onclick="randomProblemChallenge(6)">
-                <img src="https://d2gd6pc034wcta.cloudfront.net/tier/0.svg" class="mark"/>
-                Unrated Random Challenge
-                <div class="info">
-                    등급이 없는 문제 중에서 랜덤으로 출제
-                </div>
+    <div class="mid_container desktop">
+        <div class="challenge" id="tier" value="0" onclick="randomProblemChallenge(7)">
+            Tier Random Challenge    
+            <div class="info">
+                현재 티어에 맞는 문제 중에서 랜덤으로 출제
             </div>
         </div>
-
-        <div class="right_container">
-            <div class="timer_container">
-                Timer
-
-                <input type="button" id="start_button" value="Start"> 
-                <input type="button" id="end_button" value="End"> 
+        <div class="challenge" id="class" value="1" onclick="randomProblemChallenge(8)">
+            Class Random Challenge
+            <div class="info">
+                현재 클래스에 맞는 문제 중에서 랜덤으로 출제
             </div>
-            <div class="todo_container">
-                To-Do-List
-
-                <input type="text" id="todo_text">
-                <button id="addToDo_button">일정 추가</button>
-                <ul id="todo_list">
-                </ul>
+        </div>
+        <div class="challenge" id="bronze" value="2" onclick="randomProblemChallenge(0)">
+            <img src="https://d2gd6pc034wcta.cloudfront.net/tier/1-a.svg" class="mark"/>
+            Bronze Random Challenge
+            <div class="info">
+                브론즈 등급에 맞는 문제 중에서 랜덤으로 출제
             </div>
-            <div class="kakao_send_container">
-                카카오톡 공유하기
-
-                <input id="share_number" />
-
-                <a id="kakaotalk-sharing-btn" href="javascript:;">
-                    <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
-                    alt="카카오톡 공유 보내기 버튼" />
-                </a>
+        </div>
+        <div class="challenge" id="silver" value="3" onclick="randomProblemChallenge(1)">
+            <img src="https://d2gd6pc034wcta.cloudfront.net/tier/6-a.svg" class="mark"/>
+            Silver Random Challenge
+            <div class="info">
+                실버 등급에 맞는 문제 중에서 랜덤으로 출제
             </div>
+        </div>
+        <div class="challenge" id="gold" value="4" onclick="randomProblemChallenge(2)">
+            <img src="https://d2gd6pc034wcta.cloudfront.net/tier/11-a.svg" class="mark"/>
+            Gold Random Challenge
+            <div class="info">
+                골드 등급에 맞는 문제 중에서 랜덤으로 출제
+            </div>
+        </div>
+        <div class="challenge" id="platinum" value="5" onclick="randomProblemChallenge(3)">
+            <img src="https://d2gd6pc034wcta.cloudfront.net/tier/16-a.svg" class="mark"/>
+            Platinum Random Challenge
+            <div class="info">
+                플레티넘 등급에 맞는 문제 중에서 랜덤으로 출제
+            </div>
+        </div>
+        <div class="challenge" id="diamond" value="6" onclick="randomProblemChallenge(4)">
+            <img src="https://d2gd6pc034wcta.cloudfront.net/tier/21-a.svg" class="mark"/>
+            Diamond Random Challenge
+            <div class="info">
+                다이아몬드 등급에 맞는 문제 중에서 랜덤으로 출제
+            </div>
+        </div>
+        <div class="challenge" id="ruby" value="7" onclick="randomProblemChallenge(5)">
+            <img src="https://d2gd6pc034wcta.cloudfront.net/tier/26-a.svg" class="mark"/>
+            Ruby Random Challenge
+            <div class="info">
+                루비 등급에 맞는 문제 중에서 랜덤으로 출제
+            </div>
+        </div>
+        <div class="challenge" id="unrated" value="8" onclick="randomProblemChallenge(6)">
+            <img src="https://d2gd6pc034wcta.cloudfront.net/tier/0.svg" class="mark"/>
+            Unrated Random Challenge
+            <div class="info">
+                등급이 없는 문제 중에서 랜덤으로 출제
+            </div>
+        </div>
+    </div>
 
+    <div class="right_container">
+        <div class="timer_container desktop">
+            Timer
+
+            <input type="button" id="start_button" value="Start"> 
+            <input type="button" id="end_button" value="End"> 
+        </div>
+        <div class="todo_container">
+            To-Do-List
+
+            <input type="text" id="todo_text">
+            <button id="addToDo_button">일정 추가</button>
+            <ul id="todo_list">
+            </ul>
+        </div>
+        <div class="kakao_send_container">
+            카카오톡 공유하기
+
+            <input type="number" id="share_number" />
+
+            <a id="kakaotalk-sharing-btn" href="javascript:;">
+                <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+                alt="카카오톡 공유 보내기 버튼" />
+            </a>
         </div>
     </div>
 </body>
