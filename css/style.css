@@ -88,6 +88,11 @@ table {
     background-color: white;
 }
 
+#modalBody > img {
+    width: 350px;
+    margin: 20px;
+}
+
 #closeBtn {
     float: right;
     font-weight: bold;
@@ -107,6 +112,10 @@ li > button {
 }
 
 @media (min-width: 900px) {
+    .mobile {
+        display: none;
+    }
+
     body {
         display: flex;
         flex-direction: column;
@@ -305,5 +314,14 @@ li > button {
     .sub_title {
         font-size: 2em;
         margin-bottom: 10px;  
+    }
+
+    #modalBody {
+        width: 80%;
+        height: 50%;
+        padding: 30px 30px;
+        margin: 0 auto;
+        border: 1px solid gray;
+        background-color: white;
     }
 }
