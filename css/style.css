@@ -202,8 +202,9 @@
         text-align: center;
     }
 
-    .done {
-        text-decoration: line-through;
+    li {
+        display: block;
+        text-indent: -40px;
     }
 }
 
