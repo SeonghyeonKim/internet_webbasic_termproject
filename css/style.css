@@ -65,6 +65,53 @@ table {
     bottom: 30px;
 }
 
+#wrap_button {
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+}
+
+#modalWrap {
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4);
+
+    display: none;
+}
+
+#modalBody {
+    width: 500px;
+    height: 300px;
+    padding: 30px 30px;
+    margin: 0 auto;
+    border: 1px solid gray;
+    background-color: white;
+}
+
+#closeBtn {
+    float: right;
+    font-weight: bold;
+    color: gray;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+#addToDo_button {
+    display: block;
+    width: 100%;
+    margin: 5px;
+}
+
+li > button {
+    margin-left: 10px;
+}
+
 @media (min-width: 900px) {
     body {
         display: flex;

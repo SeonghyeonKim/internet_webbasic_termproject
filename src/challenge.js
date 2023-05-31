@@ -114,6 +114,25 @@ async function randomProblemChallenge(difficulty) {
     }
 }
 
+// 공유하기 모달 팝업
+const popupButton = document.getElementById('wrap_button');
+const modal = document.getElementById('modalWrap');
+const closeBtn = document.getElementById('closeBtn');
+
+popupButton.onclick = function () {
+    modal.style.display = 'block';
+}
+closeBtn.onclick = function () {
+    modal.style.display = 'none';
+}
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
 // 카카오 SDK
 let shareProblemNumber = document.getElementById("share_number").innerText;
 Kakao.init('ef39bc4ea6c955f7bd3fc1e011c2cc51'); 

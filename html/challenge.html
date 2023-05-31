@@ -119,16 +119,28 @@
         </div>
 
         <hr>
-        
+
         <div class="kakao_send_container">
-            카카오톡 공유하기
-
-            <input type="number" id="share_number" />
-
-            <a id="kakaotalk-sharing-btn" href="javascript:;">
+            <a id="wrap_button">
                 <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
                 alt="카카오톡 공유 보내기 버튼" />
             </a>
+        </div>
+
+        <div id="modalWrap">
+            <div id="modalContent">
+                <div id="modalBody">
+                    <span id="closeBtn">&times;</span>
+                    카카오톡 공유하기
+
+                    <input type="number" id="share_number" />
+
+                    <button id="kakaotalk-sharing-btn" href="javascript:;">
+                        <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+                            alt="카카오톡 공유 보내기 버튼" />
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
