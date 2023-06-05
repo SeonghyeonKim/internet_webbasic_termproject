@@ -271,7 +271,7 @@ quoteEl.ondblclick = function () {
         .then(res => res.json())
         .then(out => {
             let num = Math.floor(Math.random() * out.length);
-            console.log(out[num].author, out[num].message);
+            quoteEl.innerHTML = `<br><i>${out[num].message}</i><br>- ${out[num].author} -`
         });
 }
 
