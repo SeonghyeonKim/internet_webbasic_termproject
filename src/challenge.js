@@ -251,7 +251,7 @@ function removeTodo(event) {
 }
 
 // 일정 추가 버튼 활성화
-document.getElementById("addToDo_button").onclick = function() {
+document.getElementById("addToDo_button").onclick = function () {
     const text = document.getElementById("todo_text");
     
     if(!text.value)            
@@ -260,6 +260,19 @@ document.getElementById("addToDo_button").onclick = function() {
         addTodo(text.value);
         text.value = "";
     }
+}
+
+// 명언 생성기
+const quotesUrl = "https://raw.githubusercontent.com/golbin/hubot-maxim/master/data/maxim.json";
+
+const quoteEl = document.getElementById("quote");
+quoteEl.ondblclick = function () {
+    fetch(quotesUrl)
+        .then(res => res.json())
+        .then(out => {
+            let num = Math.floor(Math.random() * out.length);
+            console.log(out[num].author, out[num].message);
+        });
 }
 
 
