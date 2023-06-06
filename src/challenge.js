@@ -264,16 +264,29 @@ document.getElementById("addToDo_button").onclick = function () {
 
 // 명언 생성기
 const quotesUrl = "https://raw.githubusercontent.com/golbin/hubot-maxim/master/data/maxim.json";
-
 const quoteEl = document.getElementById("quote");
+
+// 더블 클릭 시 명언 변경
 quoteEl.ondblclick = function () {
     fetch(quotesUrl)
         .then(res => res.json())
         .then(out => {
+            // 데이터 중 랜덤
             let num = Math.floor(Math.random() * out.length);
-            quoteEl.innerHTML = `<br><i>${out[num].message}</i><br>- ${out[num].author} -`
+            quoteEl.innerHTML = `<br><p class="hidden">${out[num].message}</p><br>- ${out[num].author} -`
         });
 }
+
+// 마우스를 올릴 때 최대화
+quoteEl.onmouseenter = function () {
+    document.querySelector("#quote > p").classList.remove("hidden");
+}
+
+// 마우스를 내릴 때 최소화
+quoteEl.onmouseleave = function () {
+    document.querySelector("#quote > p").classList.add("hidden");
+}
+
 
 
 // 초기화

@@ -324,4 +324,11 @@ li > button {
         border: 1px solid gray;
         background-color: white;
     }
+   
+    p.hidden {
+        white-space: nowrap;
+        width: 400px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
