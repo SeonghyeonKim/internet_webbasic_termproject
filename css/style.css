@@ -91,6 +91,7 @@ table {
 #modalBody > img {
     width: 350px;
     margin: 20px;
+    clear: right;
 }
 
 #closeBtn {
