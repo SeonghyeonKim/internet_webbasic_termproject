@@ -20,7 +20,7 @@ async function getSolvedacUserData() {
         headers: {
             Accept: 'application/json'
         }
-    });
+    })
 
     let data = await response.json();
     user_class = data.class;
@@ -262,19 +262,39 @@ document.getElementById("addToDo_button").onclick = function () {
     }
 }
 
+// 엔터키로 일정 저장
+document.addEventListener("keyup", function (event) {
+    if(event.code == `Enter`) {
+        const text = document.getElementById("todo_text");
+    
+        if(!text.value)            
+            alert('내용을 입력해 주세요!');
+        else {
+            addTodo(text.value);
+            text.value = "";
+        }
+    }
+});
+
+
 // 명언 생성기
 const quotesUrl = "https://raw.githubusercontent.com/golbin/hubot-maxim/master/data/maxim.json";
 const quoteEl = document.getElementById("quote");
+let quoteJson;
 
-// 더블 클릭 시 명언 변경
-quoteEl.ondblclick = function () {
+// 명언 가져오기
+function getQuoteJson () {
     fetch(quotesUrl)
         .then(res => res.json())
         .then(out => {
-            // 데이터 중 랜덤
-            let num = Math.floor(Math.random() * out.length);
-            quoteEl.innerHTML = `<br><p class="hidden">${out[num].message}</p><br>- ${out[num].author} -`
+            quoteJson = out;
         });
+}
+
+// 더블 클릭 시 명언 변경
+quoteEl.ondblclick = function () {
+    let num = Math.floor(Math.random() * quoteJson.length);
+    quoteEl.innerHTML = `<br><p class="hidden">${quoteJson[num].message}</p><br>- ${quoteJson[num].author} -`
 }
 
 // 마우스를 올릴 때 최대화
@@ -291,8 +311,12 @@ quoteEl.onmouseleave = function () {
 
 // 초기화
 function init() {
+    // 프로필 표시
     loadSolvedacUserData();
+    // todo 리스트 불러오기
     loadTodoArray();
+    // 명언 가져오기
+    getQuoteJson();
 }
 
 init();

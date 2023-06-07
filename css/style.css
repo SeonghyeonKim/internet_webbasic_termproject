@@ -325,6 +325,10 @@ li > button {
         background-color: white;
     }
    
+    #quote > p {
+        width: 400px;
+    }
+
     p.hidden {
         white-space: nowrap;
         width: 400px;
