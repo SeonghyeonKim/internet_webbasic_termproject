@@ -335,4 +335,8 @@ li > button {
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
+    a:link {
+        text-decoration: none;
+    }
 }
